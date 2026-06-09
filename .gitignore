@@ -1,0 +1,11 @@
+venv
+images
+#test
+labels.csv
+west_african_food_dataset.zip
+food_classifier.pth
+
+# Environment variables
+.env
+.env.local
+.env.*.local

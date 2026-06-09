@@ -1,0 +1,22 @@
+# Core ML and Computer Vision
+torch>=2.0.0
+torchvision>=0.15.0
+Pillow>=9.0.0
+
+# Web Framework
+fastapi>=0.100.0
+uvicorn[standard]>=0.20.0
+python-multipart
+
+# HTTP Requests
+requests>=2.28.0
+
+# Optional: For better performance
+numpy>=1.21.0
+
+# Development and Production
+gunicorn>=20.1.0
+python-dotenv>=1.0.0
+
+# Cloud Storage (Optional - for Cloudinary)
+cloudinary>=1.36.0

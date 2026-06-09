@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  food-classifier:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./food_classifier.pth:/app/food_classifier.pth:ro
+    env_file:
+      - .env
+    environment:
+      PYTHONUNBUFFERED: "1"
+      USE_CLOUDINARY: ${USE_CLOUDINARY:-false}
+      CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME:-}
+      CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY:-}
+      CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET:-}
+      CLOUDINARY_FOLDER: ${CLOUDINARY_FOLDER:-food-classifier}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
