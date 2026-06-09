@@ -31,7 +31,7 @@ Thumbs.db
 
 # Large local assets mounted at runtime
 images/
-food_classifier.pth
+#food_classifier.pth
 
 # Documentation
 README.md
